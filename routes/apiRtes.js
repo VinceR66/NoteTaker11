@@ -14,11 +14,10 @@ module.exports = (app) => {
         let db = fs.readFileSync('db/db.json');
         db = JSON.parse(db);
         res.json(db);
-        // creating body for note
+
         let userNote = {
             title: req.body.title,
             text: req.body.text,
-
             id: uniqid(),
         };
         db.push(userNote);
